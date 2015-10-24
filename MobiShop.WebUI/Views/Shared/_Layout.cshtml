@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>@ViewBag.Title</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+
+    @Styles.Render("~/Content/css")
+
+    @RenderSection("CssHeader", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/layoutscript")
+
+    @RenderSection("ScriptsHeader", required: false)
+</head>
+<body>
+<div id="main_container">
+  <div class="top_bar">
+    
+    
+    <div class="top_search">
+      <div class="search_text"><a href="http://all-free-download.com/free-website-templates/">Advanced Search</a></div>
+      <input type="text" class="search_input" name="search" />
+      <input type="image" src="~/Images/search.gif" class="search_bt"/>
+    </div>
+    
+    
+      
+      
+  </div>
+  
+    @{ Html.RenderAction("DisplayRandomProduct", "Product"); }
+
+  <div id="main_content">
+    <div id="menu_tab">
+      <div class="left_menu_corner"></div>
+      <ul class="menu">
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav1"> Home</a></li>
+        <li class="divider"></li>
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav2">Products</a></li>
+        <li class="divider"></li>
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav3">Specials</a></li>
+        <li class="divider"></li>
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav4">My account</a></li>
+        <li class="divider"></li>
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav4">Sign Up</a></li>
+        <li class="divider"></li>
+        <li><a href="http://all-free-download.com/free-website-templates/" class="nav5">Shipping</a></li>
+        <li class="divider"></li>
+        <li><a href="contact.html" class="nav6">Contact Us</a></li>
+        
+      </ul>
+      <div class="right_menu_corner"></div>
+    </div>
+    <!-- end of menu tab -->
+        <div class="crumb_navigation">  </div>
+        <div class="left_content">
+    
+    
+    <div class="shopping_cart">
+        <div class="cart_title">Shopping cart</div>
+        <div class="cart_details"> 3 items <br />
+          <span class="border_cart"></span> Total: <span class="price">350$</span> </div>
+        <div class="cart_icon"><a href="http://all-free-download.com/free-website-templates/" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/Images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+      </div>
+      
+      <br />
+      <div class="shopping_cart">
+        <div class="cart_title">Thông tin dang nh?p</div>
+        <div class="cart_details" style="width:180px"> 
+          <p>3 items </p>
+          <p>ha ha<br />
+          </p>
+           </div>
+        
+      </div>
+      
+      @{ Html.RenderAction("Menu", "Manufacture"); }
+    
+      
+      
+      <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/Images/bann2.jpg" alt="" border="0" /></a> </div>
+      
+      <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/Images/bann2.jpg" alt="" border="0" /></a> </div>
+    </div>
+    <!-- end of left content -->
+    <div class="center_content">
+       @RenderBody()
+    </div>
+    <!-- end of center content -->
+    
+    
+  </div>
+  <!-- end of main content -->
+  <div class="footer">
+    <div class="left_footer"> <img src="~/Images/footer_logo.png" alt="" width="170" height="49"/> </div>
+    <div class="center_footer"> Template name. All Rights Reserved 2008<br />
+      <br />
+       </div>
+    <div class="right_footer"> <a href="http://all-free-download.com/free-website-templates/">home</a> <a href="http://all-free-download.com/free-website-templates/">about</a> <a href="http://all-free-download.com/free-website-templates/">sitemap</a> <a href="http://all-free-download.com/free-website-templates/">rss</a> <a href="contact.html">contact us</a> </div>
+  </div>
+</div>
+<!-- end of main_container -->
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

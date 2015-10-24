@@ -1,0 +1,20 @@
+﻿@using MobiShop.WebUI.Models
+@using MobiShop.Common.HelperMethod
+@model ProductsByManufactureIdViewModel
+
+@if (Model.Manufacture != null)
+{
+    string title = "Nhà sản xuất " + Model.Manufacture.Name;
+    ViewBag.Title = title;
+    Html.RenderPartial("_ListProductPartial",   
+        new DisplayListProductViewModel
+        {
+             DisplayName = title, Entities = Model.PagingProducts.Entities
+        });     
+    @Html.Paging(new PagingOptions(Model.PagingProducts.TotalPages))            
+}
+else
+{
+    ViewBag.Title = "Không tìm thấy";
+    @Html.Partial("_TitleBar", "Không tìm thấy nhà sản xuất phù hợp")
+}

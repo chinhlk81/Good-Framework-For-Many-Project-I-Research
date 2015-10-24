@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{844E33F5-AFC6-4A69-A3FB-BB49DC77C105}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobiShop.Core</RootNamespace>
+    <AssemblyName>MobiShop.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\Data\IAdminRepository.cs" />
+    <Compile Include="Interface\Data\IRepository.cs" />
+    <Compile Include="Interface\Data\IUnitOfWork.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminCompanyService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminManufactureService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminOrderDetailService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminOrderService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminOrderStatusChangedLogService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminOrderStatusService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminProductCommentService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminProductService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminRegionService.cs" />
+    <Compile Include="Interface\Service\AdminInterface\IAdminUserProfileService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\ICompanyService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IManufactureService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IOrderDetailService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IOrderService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IOrderStatusChangedLogService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IOrderStatusService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IProductCommentService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IProductService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IRegionService.cs" />
+    <Compile Include="Interface\Service\BasicInterface\IUserProfileService.cs" />
+    <Compile Include="Interface\Service\IService.cs" />
+    <Compile Include="Model\BaseClass\PersistentEntity.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\Manufacture.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
+    <Compile Include="Model\OrderStatus.cs" />
+    <Compile Include="Model\OrderStatusChangedLog.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductComment.cs" />
+    <Compile Include="Model\Region.cs" />
+    <Compile Include="Model\UserProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Model\Configuration\" />
+    <Folder Include="Model\MetaData\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobiShop.Common\MobiShop.Common.csproj">
+      <Project>{c9f12c32-fdd7-4750-a560-c22c9195ebd3}</Project>
+      <Name>MobiShop.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

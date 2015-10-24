@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MobiShop.Core.Model.Manufacture>
+
+<div class="title_box">Nhà sản xuất</div>
+<ul class="left_menu">
+@{
+    int i = 0;
+    foreach (var manufacture in Model)
+    {
+        ++i;
+        string className = (i % 2 == 0 ? "even" : "odd");
+        <li class="@className">
+            @Html.ActionLink(manufacture.Name, "ListByManufacureId", "Product", new { ManufactureNameUnsign = manufacture.NameUnsign }, null)
+        </li>
+    }
+}
+</ul>

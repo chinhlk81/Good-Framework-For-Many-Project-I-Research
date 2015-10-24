@@ -1,0 +1,23 @@
+﻿@using MobiShop.WebUI.Infrastructure
+@using MobiShop.WebUI.Models
+@{
+    ViewBag.Title = "Trang chủ - " + AppSettings.CompanyName;
+}
+
+@{ Html.RenderPartial("_ListProductPartial", new DisplayListProductViewModel {
+       DisplayName = "Sản phẩm mới nhất",
+       Entities = ViewBag.ProductNewest
+   }); }
+
+@{ Html.RenderPartial("_ListProductPartial", new DisplayListProductViewModel {
+       DisplayName = "Sản phẩm bán chạy nhất",
+       Entities = ViewBag.ProductBestBuy
+   }); }
+
+@{ Html.RenderPartial("_ListProductPartial", new DisplayListProductViewModel {
+       DisplayName = "Sản phẩm nhiều người xem nhất",
+       Entities = ViewBag.ProductMostView
+   }); }
+
+
+
